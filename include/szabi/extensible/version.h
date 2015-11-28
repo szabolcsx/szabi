@@ -5,23 +5,23 @@
 
 namespace szabi
 {
-    struct EXTENSIBLE version
+	struct EXTENSIBLE version
 	{
-        int major;
-        int minor;
-    };
+		int major;
+		int minor;
+	};
 
-    EXTENSIBLE bool operator>(const version&, const version&);
+	EXTENSIBLE bool operator>(const version&, const version&);
 
-    EXTENSIBLE bool operator<(const version&, const version&);
+	EXTENSIBLE bool operator<(const version&, const version&);
 
-    EXTENSIBLE bool operator>=(const version&, const version&);
+	EXTENSIBLE bool operator>=(const version&, const version&);
 
-    EXTENSIBLE bool operator<=(const version&, const version&);
+	EXTENSIBLE bool operator<=(const version&, const version&);
 
-    EXTENSIBLE bool operator==(const version&, const version&);
+	EXTENSIBLE bool operator==(const version&, const version&);
 
-    EXTENSIBLE bool operator!=(const version&, const version&);
+	EXTENSIBLE bool operator!=(const version&, const version&);
 }
 
 #endif /* SZABI_VERSION_H_INCLUDED */

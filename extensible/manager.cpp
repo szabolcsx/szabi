@@ -4,32 +4,32 @@
 
 namespace szabi
 {
-    namespace extensible
+	namespace extensible
 	{
-        manager::manager() {}
-        manager::~manager() {}
+		manager::manager() {}
+		manager::~manager() {}
 
-        void manager::load_extension(const std::string& path)
+		void manager::load_extension(const std::string& path)
 		{
-            auto pos = std::find_if(this->objects.begin(), this->objects.end(),
+			auto pos = std::find_if(this->objects.begin(), this->objects.end(),
 				[path](const szabi::shared_object& object) -> bool
 			{
-				return {object.path() == path};
+				return{ object.path() == path };
 			});
 
-            if (pos == this->objects.end())
+			if (pos == this->objects.end())
 			{
-                this->objects.emplace_back(path);
+				this->objects.emplace_back(path);
 
-                shared_object &object = this->objects.back();
+				shared_object &object = this->objects.back();
 
-                auto attach = object.template get_symbol<void(manager&)>("attach");
+				auto attach = object.template get_symbol<void(manager&)>("attach");
 
-                if (attach)
+				if (attach)
 				{
-                    attach(*this);
-                }
-            }
-        }
-    }
+					attach(*this);
+				}
+			}
+		}
+	}
 }

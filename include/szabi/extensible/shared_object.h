@@ -6,27 +6,27 @@
 
 namespace szabi
 {
-    class shared_object
+	class shared_object
 	{
-    public:
-        shared_object(const std::string&);
+	public:
+		shared_object(const std::string&);
 
-        virtual ~shared_object();
+		virtual ~shared_object();
 
-        template<typename S>
-        S* get_symbol(const std::string& name)
+		template<typename S>
+		S* get_symbol(const std::string& name)
 		{
-            return reinterpret_cast<S*>(this->get_raw_symbol(name));
-        }
+			return reinterpret_cast<S*>(this->get_raw_symbol(name));
+		}
 
-        std::string path() const;
+		std::string path() const;
 
-    private:
-        void* get_raw_symbol(const std::string&);
+	private:
+		void* get_raw_symbol(const std::string&);
 
-        std::shared_ptr<void> object;
-        std::string object_path;
-    };
+		std::shared_ptr<void> object;
+		std::string object_path;
+	};
 }
 
 #endif /* SZABI_SHARED_OBJECT_H_INCLUDED */

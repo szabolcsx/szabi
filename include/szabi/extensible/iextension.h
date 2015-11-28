@@ -5,14 +5,14 @@
 
 namespace szabi
 {
-    namespace extensible
+	namespace extensible
 	{
-        class iextension
+		class iextension
 		{
-        public:
-            static szabi::version api_version();
-        };
-    }
+		public:
+			static szabi::version api_version();
+		};
+	}
 }
 
 #endif /* SZABI_IEXTENSION_H_INCLUDED */
