@@ -2,14 +2,12 @@
 
 #include <algorithm>
 
-namespace szabi {
-    namespace extensible {
-
-        manager::manager() {
-        }
-
-        manager::~manager() {
-        }
+namespace szabi
+{
+    namespace extensible
+	{
+        manager::manager() {}
+        manager::~manager() {}
 
         void manager::load_extension(const std::string& path)
 		{

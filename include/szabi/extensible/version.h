@@ -3,7 +3,8 @@
 
 #include <szabi\extensible\extensible_export.h>
 
-namespace szabi {
+namespace szabi
+{
     struct EXTENSIBLE version
 	{
         int major;

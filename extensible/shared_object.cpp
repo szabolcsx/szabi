@@ -7,7 +7,8 @@
 
 #include <Windows.h>
 
-namespace szabi {
+namespace szabi
+{
 	shared_object::shared_object(const std::string& path) :
 		object((void*)LoadLibraryA(path.c_str()),
 			[](void* object)
