@@ -40,7 +40,7 @@ namespace szabi
 			}
 
 			template<typename E>
-			void attach(const std::string& name)
+			void attach()
 			{
 				// Check if the extension is inherited from Extensible::IExtension
 				// This is required because that class has a static member function which returns the API version used
@@ -52,6 +52,7 @@ namespace szabi
 				auto pos = this->servers.find(index);
 				if (pos != this->servers.end())
 				{
+					
 					// If both the server and the extension uses the same API, it could be loaded
 					if (this->api_version[index] == E::api_version())
 					{
@@ -60,7 +61,7 @@ namespace szabi
 					else
 					{
 						// API Version mismatch
-						throw std::runtime_error("API Version mismatch when loading " + name);
+						throw std::runtime_error("API Version mismatch when loading " + E::name());
 					}
 				}
 			}

@@ -27,11 +27,36 @@ namespace szabi
 		public:
 			using interface_t = I;
 			using interface_p = I*;
+			 
+			using impl_p = std::shared_ptr<I>;
+			using container_t = std::vector<impl_p>;
+			using iterator_t = typename container_t::iterator;
+			using const_iterator_t = typename container_t::const_iterator;
 
-			virtual void attached(I*) {}
+			virtual void attached(interface_p) = 0;
+
+			iterator_t begin()
+			{
+				return this->extensions.begin();
+			}
+
+			iterator_t end()
+			{
+				return this->extensions.end();
+			}
+
+			const_iterator_t begin() const
+			{
+				return this->extensions.begin();
+			}
+
+			const_iterator_t end() const
+			{
+				return this->extensions.end();
+			}
 
 		private:
-			std::vector<std::shared_ptr<I>> extensions;
+			container_t extensions;
 
 		protected:
 			void attach(iextension* object)

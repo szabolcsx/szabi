@@ -3,6 +3,8 @@
 
 #include <szabi\extensible\version.h>
 
+#include <string>
+
 namespace szabi
 {
 	namespace extensible
@@ -11,6 +13,8 @@ namespace szabi
 		{
 		public:
 			static szabi::version api_version();
+
+			static std::string name();
 		};
 	}
 }

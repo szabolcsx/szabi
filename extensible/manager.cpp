@@ -6,10 +6,10 @@ namespace szabi
 {
 	namespace extensible
 	{
-		manager::manager() {}
-		manager::~manager() {}
+		EXTENSIBLE manager::manager() {}
+		EXTENSIBLE manager::~manager() {}
 
-		void manager::load_extension(const std::string& path)
+		EXTENSIBLE void manager::load_extension(const std::string& path)
 		{
 			auto pos = std::find_if(this->objects.begin(), this->objects.end(),
 				[path](const szabi::shared_object& object) -> bool
