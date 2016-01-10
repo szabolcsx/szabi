@@ -15,6 +15,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)..\include\szabi\non_copyable.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)..\include\szabi\threads\interrupt_flag.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)..\include\szabi\variadic_placeholder.h" />
   </ItemGroup>
 </Project>
