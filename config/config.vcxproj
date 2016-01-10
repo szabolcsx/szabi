@@ -18,33 +18,39 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\szabi\config.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="config.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{68BCDB5E-306D-4F9C-B5AC-B79D5FD1B9E7}</ProjectGuid>
-    <RootNamespace>extensible</RootNamespace>
+    <ProjectGuid>{A2516C3C-6235-48CE-86D9-5F9F71B85854}</ProjectGuid>
+    <RootNamespace>config</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v140_xp</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v140_xp</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -78,13 +84,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <UndefinePreprocessorDefinitions>%(UndefinePreprocessorDefinitions)</UndefinePreprocessorDefinitions>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+    <Lib>
       <SubSystem>Console</SubSystem>
-      <DataExecutionPrevention>false</DataExecutionPrevention>
-    </Link>
+    </Lib>
+    <Lib>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -92,12 +98,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
     </ClCompile>
-    <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
+    <Lib>
       <SubSystem>Console</SubSystem>
+    </Lib>
+    <Lib>
       <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
-      <DataExecutionPrevention>false</DataExecutionPrevention>
-    </Link>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -108,12 +114,15 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <SubSystem>Console</SubSystem>
-      <DataExecutionPrevention>false</DataExecutionPrevention>
     </Link>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+    <Lib>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -124,33 +133,16 @@
       <SDLCheck>true</SDLCheck>
     </ClCompile>
     <Link>
-      <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <SubSystem>Console</SubSystem>
-      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
-      <DataExecutionPrevention>false</DataExecutionPrevention>
     </Link>
+    <Lib>
+      <SubSystem>Console</SubSystem>
+    </Lib>
+    <Lib>
+      <MinimumRequiredVersion>5.01</MinimumRequiredVersion>
+    </Lib>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\include\szabi\extensible.h" />
-    <ClInclude Include="..\include\szabi\extensible\extensible_export.h" />
-    <ClInclude Include="..\include\szabi\extensible\extension.h" />
-    <ClInclude Include="..\include\szabi\extensible\iextension.h" />
-    <ClInclude Include="..\include\szabi\extensible\manager.h" />
-    <ClInclude Include="..\include\szabi\extensible\server.h" />
-    <ClInclude Include="..\include\szabi\extensible\shared_object.h" />
-    <ClInclude Include="..\include\szabi\extensible\version.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="manager.cpp" />
-    <ClCompile Include="version.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="shared_object.cpp">
-      <FileType>Document</FileType>
-    </ClCompile>
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

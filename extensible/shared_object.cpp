@@ -10,7 +10,7 @@
 namespace szabi
 {
 	shared_object::shared_object(const std::string& path) :
-		object((void*)LoadLibraryA(path.c_str()),
+		object((void*)LoadLibrary(path.c_str()),
 			[](void* object)
 	{
 		if (object)
@@ -21,7 +21,8 @@ namespace szabi
 	{
 		if (!this->object)
 		{
-			std::cout << GetLastError();
+			std::cout << path << std::endl;
+			std::cout << GetLastError() << std::endl;
 			throw std::runtime_error("Unable to open library.");
 		}
 
