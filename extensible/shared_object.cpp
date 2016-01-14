@@ -10,7 +10,7 @@
 namespace szabi
 {
 	shared_object::shared_object(const std::string& path) :
-		object((void*)LoadLibrary(path.c_str()),
+        object((void*)LoadLibraryA(path.c_str()),
 			[](void* object)
 	{
 		if (object)
