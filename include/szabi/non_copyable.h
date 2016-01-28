@@ -9,8 +9,11 @@ namespace szabi
 		non_copyable() = default;
 		~non_copyable() = default;
 
+	public:
 		non_copyable(non_copyable const&) = delete;
-		void operator = (non_copyable const&) = delete;
+		non_copyable(non_copyable&&) = delete;
+		non_copyable& operator = (non_copyable const&) = delete;
+		non_copyable& operator = (non_copyable&&) = delete;
 	};
 }
 
