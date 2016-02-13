@@ -4,7 +4,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <IncludePath>..\szabi\include;$(IncludePath)</IncludePath>
-    <LibraryPath>E:\CODE\szabi\Debug;$(LibraryPath)</LibraryPath>
+    <LibraryPath>..\szabi\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup />
   <ItemGroup />
