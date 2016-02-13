@@ -3,7 +3,7 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
-    <IncludePath>E:\CODE\szabi\include;$(IncludePath)</IncludePath>
+    <IncludePath>..\szabi\include;$(IncludePath)</IncludePath>
     <LibraryPath>E:\CODE\szabi\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup />
